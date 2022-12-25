@@ -19,3 +19,5 @@ def caesar_cipher(string, shift, result = '')
     result
   end
 end
+
+puts caesar_cipher("What a string!", 5)
