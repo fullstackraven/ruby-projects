@@ -7,7 +7,7 @@ def caesar_cipher(string, shift, result = '')
     if char.ord.between?(65, 90) || char.ord.between?(97,122)
       encrypter = (((char.ord - codepoint) + shift) % 26) + codepoint
       result += encrypter.chr
-    # Handles string destruction and reconstruction, as well as, punctuation & spaces
+    # Handles string destruction and reconstruction, as well as, keeps punctuation & spaces of original string
     else
       result += char
     end
