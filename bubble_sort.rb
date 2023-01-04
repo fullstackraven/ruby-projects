@@ -31,3 +31,5 @@ def bubble_sort(array)
 end
 
 puts bubble_sort(sort_me)
+# => Finished iterations to complete sort: 14
+# => Sorted array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
