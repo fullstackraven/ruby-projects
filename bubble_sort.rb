@@ -26,10 +26,10 @@ def bubble_sort(array)
       end
     end
   end
-  puts ("Finished iterations to complete sort: #{counter}")
+  puts ("Finished #{counter} iterations to complete sort")
   output = "Sorted array: #{array}"
 end
 
 puts bubble_sort(sort_me)
-# => Finished iterations to complete sort: 14
+# => Finished 14 iterations to complete sort
 # => Sorted array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
