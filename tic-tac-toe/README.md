@@ -11,3 +11,7 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 # Install
 
 *coming soon*
+
+# Credits 
+
+All images created by: fullstackraven in [Pixilart](https://www.pixilart.com/draw)
