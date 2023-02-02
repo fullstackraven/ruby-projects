@@ -5,8 +5,10 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 
 ## Goals
 
-- Learn more about game coordinate systems in 2D computer graphics;
-- Separate game logic from graphics.
+- Learn more about game coordinate systems in 2D computer graphics.
+- Integrate game logic with graphics.
+- Increase pixel art creating skills.
+- And as always, keep improving Ruby programming knowledge.
 
 # Install
 
