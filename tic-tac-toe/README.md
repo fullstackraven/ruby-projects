@@ -5,7 +5,7 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 
 ## Goals
 
-- Learn more about game coorinate systems in 2D computer graphics;
+- Learn more about game coordinate systems in 2D computer graphics;
 - Separate game logic from graphics.
 
 # Install
