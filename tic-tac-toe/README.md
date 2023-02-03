@@ -3,7 +3,7 @@ A Ruby project from [The Odin Project](https://www.theodinproject.com/lessons/ru
 
 Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 
-![tic_tac_toe][def]
+![tic_tac_toe](lib/img/tic_tac_toe.gif)
 
 ## Goals
 
@@ -19,6 +19,3 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 # Credits 
 
 All images created by: fullstackraven in [Pixilart](https://www.pixilart.com/draw)
-
-
-[def]: '..lib/img/tic_tac_toe.gif'
