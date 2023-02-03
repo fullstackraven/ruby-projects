@@ -72,7 +72,7 @@ def display_winner(board_cells)
   repeat_game?
 end
 
-# Ruby2D Method to handle displaying board and mouse clicks
+# Method to handle displaying board and mouse clicks
 def play
   # Displays game header
   display_title
