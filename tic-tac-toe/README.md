@@ -7,10 +7,11 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 
 ## Goals
 
+- Learn the Ruby2D framework
 - Learn more about game coordinate systems in 2D computer graphics.
 - Integrate game logic with graphics.
 - Increase pixel art creating skills.
-- And as always, keep improving Ruby programming knowledge.
+- And as always, have fun and keep improving Ruby programming knowledge.
 
 # Install
 
