@@ -21,4 +21,4 @@ Written with the AWESOME [ruby2d](http://www.ruby2d.com/) framework
 All images created by: fullstackraven in [Pixilart](https://www.pixilart.com/draw)
 
 
-[def]: 'lib/img/tic_tac_toe.gif'
+[def]: 'tic-tac-toe/lib/img/tic_tac_toe.gif'
