@@ -1,8 +1,9 @@
 require 'ruby2d'
+require 'matrix'
 
 set title: 'Tic-Tac-Toe',
     width: 500,
-    height: 500,
+    height: 550,
     resizable: true,
     background: 'random'
 
@@ -33,7 +34,7 @@ def repeat_game?
     if event.key == 'x'
       reset_game
     else
-      exit
+      # exit
     end
   end
 end
@@ -73,11 +74,11 @@ end
 def play
   # Displays game header
   title = Image.new(
-    'img/game-logo.png',
-    x: 0,
-    y: -170,
+    'img/game_logo.png',
+    x: 8,
+    y: -70,
     width: 500,
-    height: 500
+    height: 250
   )
   # Displays game board
   board = Image.new(
@@ -112,7 +113,7 @@ def play
       if game_ended?(@board_cells)
         display_winner(@board_cells)
       elsif full?
-        display_tie
+        display_draw
         repeat_game?
       end
 
@@ -122,73 +123,34 @@ def play
 end
 
 def display_winner_x
-  card1 = Rectangle.new(
-    x: 50, y: 245,
-    width: 410, height: 150,
-    color: 'white',
+  x = Image.new(
+    'img/x_winner.png',
+    x: 25, 
+    y: 225,
+    width: 450, 
+    height: 190,
     z: 1
-  )
-  text1 = Text.new(
-    "GAME OVER!",
-    x: 60,
-    y: 245,
-    style: 'bold',
-    size: 60,
-    color: 'red',
-    z: 10
-  )
-  text2 = Text.new(
-    "X IS THE WINNER",
-    x: 88,
-    y: 325,
-    style: 'bold',
-    size: 40,
-    color: 'red',
-    z: 10
   )
 end
 
 def display_winner_o
-  card2 = Rectangle.new(
-    x: 50, y: 245,
-    width: 410, height: 150,
-    color: 'white',
+  o = Image.new(
+    'img/o_winner.png',
+    x: 25, 
+    y: 225,
+    width: 450, 
+    height: 190,
     z: 1
-  )
-  text3 = Text.new(
-    "GAME OVER!",
-    x: 60,
-    y: 245,
-    style: 'bold',
-    size: 60,
-    color: 'red',
-    z: 10
-  )
-  text4 = Text.new(
-    "O IS THE WINNER",
-    x: 88,
-    y: 325,
-    style: 'bold',
-    size: 40,
-    color: 'red',
-    z: 10
   )
 end
 
-def display_tie
-  card3 = Rectangle.new(
-    x: 50, y: 245,
-    width: 410, height: 150,
-    color: 'white',
-    z: 1
-  )
-  text5 = Text.new(
-    "It's a draw!",
-    x: 60,
-    y: 255,
-    style: 'bold',
-    size: 80,
-    color: 'red',
+def display_draw
+  draw = Image.new(
+    'img/draw.png',
+    x: 25, 
+    y: 225,
+    width: 450, 
+    height: 190,
     z: 1
   )
 end
