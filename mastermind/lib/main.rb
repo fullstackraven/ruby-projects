@@ -9,86 +9,103 @@ set title: 'Mastermind',
     resizable: false,
     background: 'white'
 
+# Method to handle image creation on Window
+def create_image(img_file, x, y, w, h, z)
+  image = Image.new(
+    img_file,
+    x: x,
+    y: y,
+    width: w,
+    height: h,
+    z: z
+  )
+
+  # Event handler for mouse click down on main screen button.
+  # Removes initial image and brings 'clicked' image onto Window.
+  # Creates button 'clicked' effect.
+  on :mouse_down do |event|
+    if event.x > 270 && event.x < 640 && event.y > 530 && event.y < 590
+      @start_game.remove
+      @start_game_clicked.y = 250
+    end
+  end
+
+  # Event handler for mouse click up on main screen button.
+  # Removes 'clicked' image and brings logo & rules image onto Window.
+  on :mouse_up do |event|
+    if event.x > 270 && event.x < 640 && event.y > 530 && event.y < 590
+      @start_game_clicked.remove
+      @logo.y = -50
+      @rules.y = 100
+    end
+  end
+
+  return image
+end
+
 # Add images to window.
-start_game = Image.new(
-  'img/start_game.png',
-  x: 5,
-  y: 250,
-  width: 900,
-  height: 400,
-  z: 1
-)
+@start_game = create_image('img/start_game.png', 5, 250, 900, 400, 1)
+@start_game_clicked = create_image('img/start_game_click.png', 5, -9999, 900, 400, 1)
+@logo = create_image('img/mastermind_logo.png', 200, -9999, 500, 200, 10)
+@rules = create_image('img/rules.png', 10, -9999, 950, 900, 10)
+@clues = create_image('img/clues.png', 10, -9999, 950, 900, 1)
+@maker = create_image('img/maker.png', 20, -9999, 950, 900, 10)
+@master_code_set = create_image('img/master_code_set.png', 200, -9999, 500, 200, 1)
 
-start_game_clicked = Image.new(
-  'img/start_game_click.png',
-  x: 5,
-  y: -9999, # Off screen until 'clicked'.
-  width: 900,
-  height: 400,
-  z: 1
-)
+# Hash to map each key to its corresponding image file
+PEG_IMAGE_MAP = {
+  '1' => 'red_peg',
+  '2' => 'blue_peg',
+  '3' => 'green_peg',
+  '4' => 'yellow_peg',
+  '5' => 'orange_peg',
+  '6' => 'purple_peg'
+}
 
-logo = Image.new(
-  'img/mastermind_logo.png',
-  x: 200,
-  y: -9999, # Off screen until 'clicked'.
-  width: 500,
-  height: 200,
-  z: 10
-)
+@peg_placement = [[350,485], [400,485], [450,485], [500,485], [550,485], [600,485]] 
+@peg_choice = []
+@created_pegs = []
+@master_code = []
+@counter = 0
 
-rules = Image.new(
-  'img/rules.png',
-  x: 10,
-  y: -9999, # Off screen until 'clicked'.
-  width: 950,
-  height: 900,
-  z: 1
-)
-
-clues = Image.new(
-  'img/clues.png',
-  x: 10,
-  y: -9999, # Off screen until key pressed.
-  width: 950,
-  height: 900,
-  z: 1
-)
-
-# Event handler for mouse click down on main screen button.
-# Removes initial image and brings 'clicked' image onto Window.
-# Creates button 'clicked' affect.
-on :mouse_down do |event|
-  if event.x > 270 && event.x < 640 && event.y > 530 && event.y < 590
-    start_game.remove
-    start_game_clicked.y = 250
-  end
-end
-
-# Event handler for mouse click up on main screen button.
-# Removes 'clicked' image and brings logo & rules image onto Window.
-on :mouse_up do |event|
-  if event.x > 270 && event.x < 640 && event.y > 530 && event.y < 590
-    start_game_clicked.remove
-    logo.y = -50
-    rules.y = 100
-  end
-end
-
-# Event handler for key click on rules screen button.
-# Removes rules image and brings 'clues' image onto Window.
+# Event handler for key click on rules, clues and maker screens.
+# Removes rules image and brings 'clues' image onto Window, if 'c' is pressed.
 # if the 'm' key is pressed, user becomes the maker.
 # if the 'b' key is pressed, user becomes the breaker.
 on :key_down do |event|
   if event.key == 'c'
-    rules.remove
-    clues.y = 150
+    @rules.remove
+    @clues.y = 150
   elsif event.key == 'm'
     # add code for maker
-    clues.remove
+    @clues.remove
+    @maker.y = 0
   elsif event.key == 'b'
     # add code for breaker
-    clues.remove
+    @clues.remove
+  end
+
+# Conditional logic for choosing the master code and displaying colored pegs.
+  if PEG_IMAGE_MAP.keys.include?(event.key) && @counter < 4
+    @counter += 1
+    if @counter >= 4
+      @master_code_set.y = 550
+    end
+    @master_code << event.key
+    next_peg = @peg_placement[@peg_choice.size]
+    unless @created_pegs.include?(next_peg)
+      @peg_choice << event.key
+      peg_color = PEG_IMAGE_MAP[event.key]
+      peg = Image.new(
+        "img/pegs/#{peg_color}.png",
+        x: next_peg[0],
+        y: next_peg[1],
+        height: 30,
+        width: 30
+      )
+      peg.add
+      @created_pegs << next_peg
+    end
   end
 end
 
