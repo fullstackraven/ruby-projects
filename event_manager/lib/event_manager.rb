@@ -13,7 +13,7 @@ end
 # Define a method to find legislators by zip code
 def legislators_by_zipcode(zip)
   civic_info = Google::Apis::CivicinfoV2::CivicInfoService.new # Create a new instance of Google Civic Information API
-  civic_info.key = 'YOUR_API_KEY' # Replace with the API key
+  civic_info.key = 'AIzaSyClRzDqDh5MsXwnCWi0kOiiBivP6JsSyBw' # API key
 
   begin # Start a try-catch block
     civic_info.representative_info_by_address( # Call the method representative_info_by_address of civic_info object
