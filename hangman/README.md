@@ -4,6 +4,8 @@ A Ruby project from [The Odin Project](https://www.theodinproject.com/lessons/ru
 
 Written with the AWESOME [Ruby2D](http://www.ruby2d.com/) framework
 
+![Hangman](lib/img/hangman.gif)
+
 This is a simple Hangman game built using Ruby2D where the player plays against the computer.
 
 ## Goals
@@ -35,22 +37,25 @@ Clone the repository and navigate to the project directory in your terminal.
 ruby hangman.rb
 ```
 
-2. A random word between 5 and 12 characters will be chosen as the secret word.
+2. A random word between 5 and 10 characters will be chosen as the secret word.
 3. The player has to guess the letters in the word before they run out of attempts.
 4. On each turn, the player can either guess a letter or choose to save the game.
-5. If the player saves the game, the game will be serialized and saved to a file for later retrieval.
+5. If the player presses 'esc' key, they will be prompted to save the game. If the player saves the game, the game will be serialized and saved to a file for later retrieval.
 6. To retrieve a saved game, run:
 
 ```
-ruby hangman.rb -s saved_game.txt.
+ruby hangman.rb
 ```
+Then click the 'Load Game' button. The game be generated from last save. 
 
 ## Game Features
 
-1. The game displays a count of incorrect guesses left.
-2. The game displays which correct letters have already been chosen and their positions in the word.
-3. The game displays which incorrect letters have already been chosen.
-4. The player can save the game at any point and retrieve it later.
+1. The game displays which correct letters have already been chosen and their positions in the word.
+2. The game displays which incorrect letters have already been chosen.
+3. The player can save the game at any point and retrieve it later.
+4. The game displays a 'back' button that can be used to navigate to the main menu. 
+
+Note: The back button does not save the game state. 
 
 ## Credits 
 
