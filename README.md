@@ -21,7 +21,7 @@ These projects are from [The Odin Project](https://www.theodinproject.com/paths/
 
 ## Advanced Ruby
 
-[custom_enumrables](https://www.theodinproject.com/lessons/ruby-custom-enumerables)
+[custom_enumerables](https://www.theodinproject.com/lessons/ruby-custom-enumerables)
 
 ## A Bit of Computer Science
 
