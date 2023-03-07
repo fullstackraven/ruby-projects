@@ -1,10 +1,10 @@
 # Custom Enumerable Project
 
-This repository complements the [Custom Enumerables Project](https://www.theodinproject.com/lessons/ruby-custom-enumerables) in the Ruby Course for The Odin Project. The goal of this project is to reimplement common methods used frequently through the enumerables module with objects like arrays and hashes. This project will also familiarize you with how to work with blocks and procs.
+This repository complements the [Custom Enumerables Project](https://www.theodinproject.com/lessons/ruby-custom-enumerables) in the Ruby Course for The Odin Project. The goal of this project is to reimplement common methods used frequently through the enumerables module with objects like arrays and hashes.
 
 ### Methods
 
-The following methods I created to test against the Ruby built-in enumerable methods.
+The following methods were created to test against the Ruby built-in enumerable methods.
 
 - each : my_each
 - each_with_index : my_each_with_index
@@ -16,4 +16,4 @@ The following methods I created to test against the Ruby built-in enumerable met
 - map : my_map
 - inject : my_inject
 
-All the methods I created passed against the built-in methods and produced the same result.
+All the methods created passed against the built-in methods and produced the same result.
