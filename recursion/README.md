@@ -9,3 +9,5 @@ The Fibonacci Sequence is a well-known sequence of numbers that can be calculate
 ## Merge Sort
 
 The second assignment focuses on implementing the Merge Sort algorithm recursively to sort an array of numbers. The #merge_sort method should take an array as input and return a sorted array using the recursive merge sort methodology.
+
+In my implementation of this assignment, I created a method to randomize the size and element values of the array that is used in the merge sort method. I also included a steps counter to display the number of steps the algorithm takes to complete the sort. The terminal displays the initial 'Unsorted' array, the 'Sorted' array, and the 'Steps taken to sort'. 
