@@ -6,18 +6,18 @@ The LinkedList class represents the full list, while the Node class represents e
 
 ## Methods
 
-#append(value)
-#prepend(value)
-#size
-#head
-#tail
-#at(index)
-#pop
-#contains?(value)
-#find(value)
-#to_s
+- #append(value)
+- #prepend(value)
+- #size
+- #head
+- #tail
+- #at(index)
+- #pop
+- #contains?(value)
+- #find(value)
+- #to_s
 
 Extra Credit: 
 
-#insert_at(value, index)
-#remove_at(index)
+- #insert_at(value, index)
+- #remove_at(index)
