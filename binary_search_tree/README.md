@@ -15,7 +15,7 @@ This project requires the implementation of a balanced binary search tree using 
 - #height
 - #depth
 - #balanced?
-- #rebalance
+- #rebalance!
 
 ## Tie it all together
 
